@@ -24,7 +24,7 @@
 "encoding": {
 "color": {
 "field": "Co2 Emission",
-"type": "quantitative",
+"type": "quantitative"
 },
 "tooltip": [
 {"field": "properties.NAME", "type": "nominal", "title":
