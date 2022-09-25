@@ -13,14 +13,12 @@
 </head>
 <body>
   
-<div id="choropleth_map"></div>
+<div id="vis"></div>
 
 <script type="text/javascript">
 
-  var spec2 = "co2.vg.json";
-  vegaEmbed('#choropleth_map', spec2).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
+  var spec2 = "./co2.vg.json";
+  vegaEmbed("#vis", spec, {mode: "vega-lite"}).then(console.log).catch(console.warn);
 </script>
 
 </body>
