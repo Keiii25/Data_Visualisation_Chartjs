@@ -9,6 +9,20 @@
     },
     "projection": {"type": "equalEarth"},
     "layer":[
+        {
+            "data": {
+              "url": "https://raw.githubusercontent.com/Keiii25/FIT3179_Assignment2/main/Week_9/ocean.topojson",
+              "format": {"type": "topojson", "feature": "oceans"}
+            },
+            "mark": {"type": "geoshape", "fill": "skyblue"}
+          },
+          {
+            "data": {
+              "url": "https://raw.githubusercontent.com/Keiii25/FIT3179_Assignment2/main/Week_9/graticules.topojson",
+              "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
+            },
+            "mark": {"type": "geoshape", "fill": null, "stroke": "lightgray"}
+          },
       {
         "transform": [
           {"calculate": "'Data is not available in ' + datum.properties.NAME", "as": "note"}
