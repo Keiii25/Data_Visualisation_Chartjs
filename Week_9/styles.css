@@ -1,6 +1,6 @@
-#choropleth_map {
-	top:100px;
+#vis {
+	top:50px;
 	bottom: 100px; 
-	left: 100px;
+	left: 150px;
 	right: 100px;
 }
