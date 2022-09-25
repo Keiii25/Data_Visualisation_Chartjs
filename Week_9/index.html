@@ -3,8 +3,8 @@
   <head>
     <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
     <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
 
     <!-- CSS file -->
     <link rel="stylesheet" type="text/css" href="./styles.css" media="all" />
@@ -12,8 +12,7 @@
   <body>
     <div id="vis"></div>
     <script type="text/javascript">
-      var spec =
-        "https://raw.githubusercontent.com/Keiii25/FIT3179_Assignment2/main/Week_9/co2.vg.json";
+      var spec = "co2.vg.json";
       vegaEmbed("#vis", spec, { mode: "vega-lite" })
         .then(console.log)
         .catch(console.warn);
