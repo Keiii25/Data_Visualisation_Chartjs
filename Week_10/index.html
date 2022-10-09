@@ -11,9 +11,14 @@
   </head>
   <body>
     <div id="vis"></div>
+    <div id="vis2"></div>
     <script type="text/javascript">
       var spec = "co2.vg.json";
       vegaEmbed("#vis", spec, { mode: "vega-lite" })
+        .then(console.log)
+        .catch(console.warn);
+      var spec = "bubble.vg.json";
+      vegaEmbed("#vis2", spec, { mode: "vega-lite" })
         .then(console.log)
         .catch(console.warn);
     </script>
