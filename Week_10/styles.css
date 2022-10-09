@@ -4,3 +4,15 @@
 	left: 150px;
 	right: 100px;
 }
+.vis-container {
+	padding-left: 20%;
+	padding-right: 20%;
+	padding-top: 5%;
+	padding-bottom: 5%;
+	align-items: 'center';
+	justify-content: 'center';
+}
+.header-container {
+	width: 100%;
+	background-color:seagreen;
+}
