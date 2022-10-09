@@ -14,15 +14,31 @@
       <div class="header-container">
         <h3>Carbon Dioxide Emission Per Capita Across the World</h3>
       </div>
-      <div id="vis" class="vis-container"></div>
-    </div>
-    <div>
-      <div class="header-container">
-        <h3>Air Pollution effects on Mortality</h3>
+      <div class="row">
+        <div id="vis" class="vis-container"></div>
+        <div class="text-container">
+          As the top producers of fossils fuels in the world, <b>Australia, United States and Russia</b> 
+          are among the highest contributors to carbon dioxide emissions. 
+          These countries depends heavily on fossils fuel for source of electricity and 
+          exportation. About 60% of Australia’s electricity over the past year came from burning coal thus 
+          contributing to high emissionn of carbon dioxide. Developing countries contributes to more than half of the carbon dioxide
+          emission in the world.
+        </div>
       </div>
-      <div id="vis2" class="vis-container"></div>
+      
+      <div>
+        <div class="header-container">
+          <h3>Air Pollution effects on Mortality</h3>
+        </div>
+        <div class="row">
+          <div id="vis2" class="vis-container"></div>
+          <div class="text-container">
+            Those countries with a higher exposure of PM2.5 is have a higher mortality rate
+          </div>
+        </div>
+        <div id="vis2" class="vis-container"></div>
+      </div>
     </div>
-    
     <script type="text/javascript">
       var spec = "co2.vg.json";
       vegaEmbed("#vis", spec, { mode: "vega-lite" })

@@ -4,10 +4,10 @@ body {
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 #vis {
-	top:50px;
+	/* top:50px;
 	bottom: 100px; 
 	left: 150px;
-	right: 100px;
+	right: 100px; */
 }
 .container{
 	align-items: center;
@@ -36,4 +36,15 @@ body {
 	text-align: center;
 	text-transform: uppercase;
 	color: white
+}
+.row {
+	flex-direction: row;
+}
+.column {
+	flex-direction: column;
+}
+.text-container {
+	color: white;
+	font-size: 14;
+	padding-left: 16px;
 }

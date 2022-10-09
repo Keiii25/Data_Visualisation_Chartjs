@@ -1,6 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "How Air Pollution is affecting mortality",
   "width": 500,
   "height": 500,
   "data": {
@@ -24,7 +23,7 @@
           "url": "https://raw.githubusercontent.com/Keiii25/FIT3179_Assignment2/main/Week_10/world_country_gdp_usd.csv"
         },
         "key": "Code",
-        "fields": ["GDP_USD"]
+        "fields": ["GDP_per_capita_USD"]
       }
     }
   ],
@@ -54,8 +53,10 @@
         }
       ],
       "mark": "circle",
+      
       "encoding": {
         "color": {
+          "title" : "Continent",
           "field": "Continent_Name",
           "type": "nominal",
           "scale": {
@@ -70,11 +71,12 @@
           }
         },
         "size": {
-          "field": "GDP_USD",
+          "title" : "GDP Per Capita (USD)",
+          "field": "GDP_per_capita_USD",
           "type": "quantitative",
           "scale": {
             "type": "threshold",
-            "domain": [10000000, 100000000, 1000000000, 1000000000000],
+            "domain": [1000, 5000, 10000, 100000],
             "range": [10, 50, 150, 200, 300, 400]
           },
           "legend": { "format": ".1s" }
@@ -88,7 +90,7 @@
           {
             "field": "Level",
             "type": "quantitative",
-            "title": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+            "title": "Mean annual exposure of PM2.5"
           },
           {
             "field": "Deaths",
@@ -98,38 +100,20 @@
         ]
       }
     },
-    {
-      "mark": {
-        "type": "text",
-        "baseline": "middle",
-        "dx": -12,
-        "fontSize": 11.5,
-        "fontStyle": "italic"
-      },
+   {
+     "mark" : {"type": "rule", "strokeDash": [2, 2], "size": 2},
+     "encoding": {
+       "x" : {"aggregate": "mean", "field": "Level"},
+       "y" : {"aggregate": "max", "field": "Deaths"}
+     }
+   },
+   {
+     "mark": {"type": "text", "fontSize" : 12, "dy": 80,"dx": 95,"fontStyle": "italic", "color": "red"},
       "encoding": {
-        "text": { "field": "Entity", "type": "nominal" },
-        "color": { "value": "black" },
-        "opacity": {
-          "condition": {
-            "test": "datum['Entity'] == 'China' || datum['Entity'] == 'Singapore' || datum['Entity'] == 'Australia' || datum['Entity'] == 'New Zealand' || datum['Entity'] == 'Italy' || datum['Entity'] == 'Yemen' || datum['Entity'] == 'United States'",
-            "value": 1
-          },
-          "value": 0
-        },
-        "tooltip": [
-          { "field": "Entity", "type": "nominal", "title": "Country" },
-          {
-            "field": "Level",
-            "type": "quantitative",
-            "title": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
-          },
-          {
-            "field": "Deaths",
-            "type": "quantitative",
-            "title": "Total death per million due to air pollution"
-          }
-        ]
+        "text": {"value": "Average PM2.5 Annual Exposure"},
+        "x" : {"aggregate": "mean", "field": "Level"},
+       "y" : {"aggregate": "max", "field": "Deaths"}     
       }
-    }
+   }
   ]
 }
