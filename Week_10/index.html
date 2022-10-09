@@ -10,14 +10,19 @@
     <link rel="stylesheet" type="text/css" href="./styles.css" media="all" />
   </head>
   <body>
-    <div class="header-container">
-      Carbon Dioxide Emission Per Capita Across the World
+    <div class="container">
+      <div class="header-container">
+        <h3>Carbon Dioxide Emission Per Capita Across the World</h3>
+      </div>
       <div id="vis" class="vis-container"></div>
     </div>
-    <div class="header-container">
-      Air Pollution effects on Mortality
+    <div>
+      <div class="header-container">
+        <h3>Air Pollution effects on Mortality</h3>
+      </div>
       <div id="vis2" class="vis-container"></div>
     </div>
+    
     <script type="text/javascript">
       var spec = "co2.vg.json";
       vegaEmbed("#vis", spec, { mode: "vega-lite" })
