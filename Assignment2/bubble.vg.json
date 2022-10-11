@@ -1,0 +1,119 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 500,
+  "height": 500,
+  "data": {
+    "url": "https://raw.githubusercontent.com/Keiii25/FIT3179_Assignment2/main/Week_10/air_pollutions_deaths.csv"
+  },
+  "transform": [
+    {
+      "lookup": "Code",
+      "from": {
+        "data": {
+          "url": "https://gist.githubusercontent.com/stevewithington/20a69c0b6d2ff846ea5d35e5fc47f26c/raw/13716ceb2f22b5643ce5e7039643c86a0e0c6da6/country-and-continent-codes-list-csv.csv"
+        },
+        "key": "Three_Letter_Country_Code",
+        "fields": ["Continent_Name"]
+      }
+    },
+    {
+      "lookup": "Code",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/Keiii25/FIT3179_Assignment2/main/Week_10/world_country_gdp_usd.csv"
+        },
+        "key": "Code",
+        "fields": ["GDP_per_capita_USD"]
+      }
+    }
+  ],
+
+  "encoding": {
+    "x": {
+      "field": "Level",
+      "type": "quantitative",
+      "title": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)",
+      "axis": { "tickCount": 7 }
+    },
+    "y": {
+      "field": "Deaths",
+      "title": "Total death per million due to air pollution",
+      "type": "quantitative",
+      "axis": { "tickCount": 6 }
+    }
+  },
+
+  "layer": [
+    {
+      "params": [
+        {
+          "name": "continent_highlight",
+          "select": { "type": "point", "fields": ["Continent_Name"] },
+          "bind": "legend"
+        }
+      ],
+      "mark": "circle",
+      
+      "encoding": {
+        "color": {
+          "title" : "Continent",
+          "field": "Continent_Name",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "North America",
+              "South America",
+              "Europe",
+              "Africa",
+              "Asia",
+              "Oceania"
+            ]
+          }
+        },
+        "size": {
+          "title" : "GDP Per Capita (USD)",
+          "field": "GDP_per_capita_USD",
+          "type": "quantitative",
+          "scale": {
+            "type": "threshold",
+            "domain": [1000, 5000, 10000, 100000],
+            "range": [10, 50, 150, 200, 300, 400]
+          },
+          "legend": { "format": ".1s" }
+        },
+        "opacity": {
+          "condition": { "param": "continent_highlight", "value": 0.6 },
+          "value": 0.2
+        },
+        "tooltip": [
+          { "field": "Entity", "type": "nominal", "title": "Country" },
+          {
+            "field": "Level",
+            "type": "quantitative",
+            "title": "Mean annual exposure of PM2.5"
+          },
+          {
+            "field": "Deaths",
+            "type": "quantitative",
+            "title": "Total death per million due to air pollution"
+          }
+        ]
+      }
+    },
+   {
+     "mark" : {"type": "rule", "strokeDash": [2, 2], "size": 2},
+     "encoding": {
+       "x" : {"aggregate": "mean", "field": "Level"},
+       "y" : {"aggregate": "max", "field": "Deaths"}
+     }
+   },
+   {
+     "mark": {"type": "text", "fontSize" : 12, "dy": 80,"dx": 95,"fontStyle": "italic", "color": "red"},
+      "encoding": {
+        "text": {"value": "Average PM2.5 Annual Exposure"},
+        "x" : {"aggregate": "mean", "field": "Level"},
+       "y" : {"aggregate": "max", "field": "Deaths"}     
+      }
+   }
+  ]
+}
