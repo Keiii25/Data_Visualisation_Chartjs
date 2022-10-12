@@ -6,23 +6,54 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
 
+
     <!-- CSS file -->
     <link rel="stylesheet" type="text/css" href="./styles.css" media="all" />
   </head>
   <body>
     <div class="container">
       <div class="header-container">
-        <h3>Carbon Dioxide Emission Per Capita Across the World</h3>
+        <h3>Temperature Across the Globe from 1990 to 2020</h3>
       </div>
       <div class="row">
         <div id="vis" class="vis-container"></div>
-        <div class="text-container">
-          As the top producers of fossils fuels in the world, <b>Australia, United States and Russia</b> 
+        <div class="text-container grey">
+          As the top producers of fossils fuels in the world, <div class="black"><b>Australia, United States and Russia</b></div> 
           are among the highest contributors to carbon dioxide emissions. 
           These countries depends heavily on fossils fuel for source of electricity and 
           exportation. About 60% of Australia’s electricity over the past year came from burning coal thus 
           contributing to high emissionn of carbon dioxide. Developing countries contributes to more than half of the carbon dioxide
           emission in the world. (Morton, 2021)
+        </div>
+      </div>
+
+      <div>
+        <div class="header-container">
+          <h3>Global Temperature Anomaly of Land and Ocean</h3>
+        </div>
+        <div class="row">
+          <div id="vis3" class="vis-container"></div>
+          <div class="text-container grey">
+           Besides being a major contributor to global warming, carbon dioxide also plays a vital role in air pollution which
+           causes a number of deaths across the world each year.
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="header-container">
+          <h3>Carbon Dioxide Emission</h3>
+        </div>
+        <div class="row">
+          <div id="vis5" class="vis-container"></div>
+          <div class="text-container grey">
+            As the top producers of fossils fuels in the world, <div class="black"><b>Australia, United States and Russia</b></div> 
+            are among the highest contributors to carbon dioxide emissions. 
+            These countries depends heavily on fossils fuel for source of electricity and 
+            exportation. About 60% of Australia’s electricity over the past year came from burning coal thus 
+            contributing to high emissionn of carbon dioxide. Developing countries contributes to more than half of the carbon dioxide
+            emission in the world. (Morton, 2021)
+          </div>
         </div>
       </div>
       
@@ -32,20 +63,44 @@
         </div>
         <div class="row">
           <div id="vis2" class="vis-container"></div>
-          <div class="text-container">
-            Those countries with a higher exposure of PM2.5 is have a higher mortality rate
+          <div class="text-container grey">
+           Besides being a major contributor to global warming, carbon dioxide also plays a vital role in air pollution which
+           causes a number of deaths across the world each year.
           </div>
         </div>
-        <div id="vis2" class="vis-container"></div>
+      </div>
+      <div>
+        <div class="header-container">
+          <h3>Effects of Climate Change on Artic Ice</h3>
+        </div>
+        <div class="row">
+          <div id="vis4" class="vis-container"></div>
+          <div class="text-container grey">
+           Besides being a major contributor to global warming, carbon dioxide also plays a vital role in air pollution which
+           causes a number of deaths across the world each year.
+          </div>
+        </div>
       </div>
     </div>
     <script type="text/javascript">
-      var spec = "co2.vg.json";
+      var spec = "temperature.vg.json";
       vegaEmbed("#vis", spec, { mode: "vega-lite" })
         .then(console.log)
         .catch(console.warn);
       var spec = "bubble.vg.json";
       vegaEmbed("#vis2", spec, { mode: "vega-lite" })
+        .then(console.log)
+        .catch(console.warn);
+        var spec = "land_to_ocean.vg.json";
+        vegaEmbed("#vis3", spec, { mode: "vega-lite" })
+        .then(console.log)
+        .catch(console.warn);
+        var spec = "iceberg.vg.json";
+        vegaEmbed("#vis4", spec, { mode: "vega-lite" })
+        .then(console.log)
+        .catch(console.warn);
+        var spec = "co2_rank.vg.json";
+        vegaEmbed("#vis5", spec, { mode: "vega-lite" })
         .then(console.log)
         .catch(console.warn);
     </script>

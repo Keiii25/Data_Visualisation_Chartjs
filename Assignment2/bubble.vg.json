@@ -32,7 +32,7 @@
     "x": {
       "field": "Level",
       "type": "quantitative",
-      "title": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)",
+      "title": "Carbon Dioxide Level",
       "axis": { "tickCount": 7 }
     },
     "y": {
@@ -90,7 +90,7 @@
           {
             "field": "Level",
             "type": "quantitative",
-            "title": "Mean annual exposure of PM2.5"
+            "title": "Carbon Dioxide Level"
           },
           {
             "field": "Deaths",
