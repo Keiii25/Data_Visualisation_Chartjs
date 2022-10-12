@@ -38,7 +38,7 @@
           "value": 1
         },
         "tooltip": [
-          { "field": "Entity", "type": "nominal" },
+          { "field": "Entity", "type": "nominal", "title": "Country"},
           {
             "field": "Annual CO2 emissions (per capita)",
             "type": "quantitative"

@@ -2,19 +2,27 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 800,
   "height": 500,
-
   "projection": { "type": "equirectangular" },
-
   "params": [
     {
-      "name": "Year",
+      "name": "year_selection",
       "value": 2020,
       "bind": {
-        "input": "range",
-        "min": 1900,
-        "max": 2020,
-        "step": 1,
-        "name": "Year"
+        "input": "select",
+        "name": "Year",
+        "options": [
+          2019,
+          2020,
+          2021, 
+          2022
+        ],
+        "labels": [
+          "2019",
+          "2020",
+          "2021", 
+          "2022"
+        ],
+
       }
     }
   ],
@@ -30,7 +38,7 @@
       "data": {
         "url": "https://raw.githubusercontent.com/Keiii25/FIT3179_Assignment2/main/Assignment2/data/ice_berg_location.csv"
       },
-      "transform": [{ "filter": "datum.Year == Year" }],
+      "transform": [{ "filter": "datum.Year == year_selection" }],
       "mark": { "type": "circle" },
       "encoding": {
         "latitude": { "field": "Latitude", "type": "quantitative" },
@@ -47,6 +55,6 @@
         "color": { "field": "Iceberg", "legend": null },
         "tooltip": [{ "field": "Iceberg" }, { "field": "Area" }]
       }
-    }
+    },
   ]
 }

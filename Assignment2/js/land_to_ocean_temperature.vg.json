@@ -20,11 +20,22 @@
           "type": "quantitative",
           "title": "Global Ocean to Land Temperature Index"
         },
+        "color": {
+          "field": "Value",
+          "scale": {
+            "domain": [0], 
+            "range": ["#2c7bb6", "#d7191c"],
+            "type": "threshold"
+          }
+        },
         "tooltip": [
           {"field": "Year"},
           {"field": "Value", "title": "Global Tempetaure Anomoly of Land and Ocean"}
         ]
       }
     }
-  ]
+  ],
+  "config": {
+    "background": "#f3f3f3"
+  }
 }
