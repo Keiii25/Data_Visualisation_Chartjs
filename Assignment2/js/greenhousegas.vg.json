@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A simple donut chart with embedded data.",
+    "data": {
+      "values": [
+        {"category": "Carbon Dioxide", "value": 79},
+        {"category": "Methane", "value": 11},
+        {"category": "Nitrous Oxide", "value": 7},
+        {"category": "Flurinated Gases", "value": 3}
+      ]
+    },
+    "mark": {"type": "arc", "innerRadius": 50},
+    "encoding": {
+      "theta": {"field": "value", "type": "quantitative"},
+      "color": {"field": "category", "type": "nominal"},
+      "tooltip": [
+        {"field": "category", "title": "Type of Greenhouse Gas"},
+        {"field": "value", "title": "Percentage"}
+      ]
+
+    },
+    "config": {
+      "background": "#f3f3f3"
+    }
+  }
+  

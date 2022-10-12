@@ -11,118 +11,108 @@
   </head>
   <body>
     <div class="background">
-
-    
-    <div class="title">
-      Climate Change
-    </div>
-    <div class="subtitle">
-      How is it affecting the globe?
-    </div>
-    <div class="divider"></div>
-    <div class="container">
-      <div class="header-container">
-        <h3>Visualising a warmer world</h3>
-      </div>
-      <div class="row">
-        <div class="text-container grey multicolumn">
-          As the top producers of fossils fuels in the world,
-          <span class="black">Australia, United States and Russia</span>
-          are among the highest contributors to carbon dioxide emissions. These
-          countries depends heavily on fossils fuel for source of electricity
-          and exportation. <br> About 60% of Australia’s electricity over the past
-          year came from burning coal thus contributing to high emissionn of
-          carbon dioxide. Developing countries contributes to more than half of
-          the carbon dioxide emission in the world. (Morton, 2021)
-        </div>
-        <div id="vis" class="vis-container map"></div>
-      </div>
-
-      <div>
+      <div class="title">Climate Change</div>
+      <div class="subtitle">How is it affecting the globe?</div>
+      <div class="divider"></div>
+      <div class="container">
         <div class="header-container">
-          <h3>Global Temperature Anomaly of Land and Ocean</h3>
+          <h3>Visualising a warmer world</h3>
         </div>
         <div class="row">
-          <div id="vis3" class="vis-container"></div>
-          <div class="text-container grey">
-            Besides being a major contributor to global warming, carbon dioxide
-            also plays a vital role in air pollution which causes a number of
-            deaths across the world each year.
+          <div class="text-container grey multicolumn">
+            Temperature changes has been increasing gradually across the globe especially in least developing countries. 
+            2020 was the second warmest year on record since 1850, followed 2016. The global mean temperature in 2020 is 
+            estimated to have been 1.27 °C (2.29 °F) above the average temperature of the late 19th century, from 1850-1900, 
+            a period often used as a pre-industrial baseline for global temperature targets. 
+          </div>
+          <div id="vis" class="vis-container map"></div>
+        </div>
+
+        <div>
+          <div class="header-container">
+            <h3>Global Temperature Anomaly of Land and Ocean</h3>
+          </div>
+          <div class="row">
+            <div class="text-container grey multicolumn">
+              The earth has become warmer compared to the 1951 to 1980 average. 
+              Warmer temperatures over time are changing weather patterns and disrupting the usual balance of nature. 
+              This poses many risks to human beings and all other forms of life on Earth.
+            </div>
+            <div id="vis3" class="vis-container map"></div>
+            
           </div>
         </div>
-      </div>
-
-      <div class="header-container">
-        <h3>Ice Berg in Artic/h3>
-      </div>
-      <div class="row">
-        <div id="vis4" class="vis-container"></div>
-        <div class="text-container grey">
-          Besides being a major contributor to global warming, carbon dioxide
-          also plays a vital role in air pollution which causes a number of
-          deaths across the world each year.
+        <div>
+          <div class="header-container">
+            <h3>The impacts of Climate Change on Mortality</h3>
+          </div>
+          <div class="row">
+            <div class="text-container grey multicolumn">
+              Climate change is responsible for the rise of natural disasters such as flood, wildfires, droughts, 
+              ocean acidification and etc.. All these events has disrupted the lives of people which in turns causes deaths.
+              There is a positive correlation between the rise of temperature and number of deaths per 1000 in the world. This
+              relationship is especially evident in Europe.
+            </div>
+            <div id="vis2" class="vis-container map"></div>
+          </div>
         </div>
-      </div>
+        <div>
+        <div>
+          <div class="header-container">
+            <h3>Greenhouse Gas Composition</h3>
+          </div>
+          <div class="row">
+            <div class="text-container grey">
+              Greenhouse gas is the main issue that is causing global warming as these gases get traps within the atmosphere
+              and prevents the heat from escaping the atmosphere. Carbon dioxide is accountable for 79% of the greenhouse gases.
+            </div>
+            <div id="vis4" class="vis-container map"></div>
+          </div> 
         <div class="header-container">
           <h3>Carbon Dioxide Emission</h3>
         </div>
         <div class="row">
-          <div id="vis5" class="vis-container"></div>
-          <div class="text-container grey">
+          <div class="text-container grey multicolumn">
             As the top producers of fossils fuels in the world,
-            <div class="black"><b>Australia, United States and Russia</b></div>
+            <span class="black">Australia, United States and Russia</span>
             are among the highest contributors to carbon dioxide emissions.
             These countries depends heavily on fossils fuel for source of
-            electricity and exportation. About 60% of Australia’s electricity
-            over the past year came from burning coal thus contributing to high
-            emissionn of carbon dioxide. Developing countries contributes to
-            more than half of the carbon dioxide emission in the world. (Morton,
-            2021)
+            electricity and exportation. <br />
+            About 60% of Australia’s electricity over the past year came from
+            burning coal thus contributing to high emissionn of carbon dioxide.
+            Developing countries contributes to more than half of the carbon
+            dioxide emission in the world. (Morton, 2021)
+          </div>
+          <div id="vis5" class="vis-container map rank"></div>  
           </div>
         </div>
-      <
-     
-      <div>
-        <div class="header-container">
-          <h3>Air Pollution effects on Mortality</h3>
         </div>
-        <div class="row">
-          <div id="vis2" class="vis-container"></div>
-          <div class="text-container grey">
-            Besides being a major contributor to global warming, carbon dioxide
-            also plays a vital role in air pollution which causes a number of
-            deaths across the world each year.
-          </div>
+       
+          
         </div>
       </div>
-      <div>
-        <div class="header-container">
-          <h3>Effects of Climate Change on Artic Ice</h3>
-        </div>
-      </div>
-    </div>
-    <script type="text/javascript">
-      var spec = "./js/temperature.vg.json";
-      vegaEmbed("#vis", spec, { mode: "vega-lite" })
-        .then(console.log)
-        .catch(console.warn);
-      var spec = "./js/bubble.vg.json";
-      vegaEmbed("#vis2", spec, { mode: "vega-lite" })
-        .then(console.log)
-        .catch(console.warn);
-      var spec = "./js/land_to_ocean_temperature.vg.json";
-      vegaEmbed("#vis3", spec, { mode: "vega-lite" })
-        .then(console.log)
-        .catch(console.warn);
-      var spec = "./js/ice_berg.vg.json";
-      vegaEmbed("#vis4", spec, { mode: "vega-lite" })
-        .then(console.log)
-        .catch(console.warn);
-      var spec = "./js/co2_rank.vg.json";
-      vegaEmbed("#vis5", spec, { mode: "vega-lite" })
-        .then(console.log)
-        .catch(console.warn);
-    </script>
+      <script type="text/javascript">
+        var spec = "./js/temperature.vg.json";
+        vegaEmbed("#vis", spec, { mode: "vega-lite" })
+          .then(console.log)
+          .catch(console.warn);
+        var spec = "./js/bubble.vg.json";
+        vegaEmbed("#vis2", spec, { mode: "vega-lite" })
+          .then(console.log)
+          .catch(console.warn);
+        var spec = "./js/land_to_ocean_temperature.vg.json";
+        vegaEmbed("#vis3", spec, { mode: "vega-lite" })
+          .then(console.log)
+          .catch(console.warn);
+          var spec = "./js/greenhousegas.vg.json";
+        vegaEmbed("#vis4", spec, { mode: "vega-lite" })
+          .then(console.log)
+          .catch(console.warn);
+        var spec = "./js/co2_rank.vg.json";
+        vegaEmbed("#vis5", spec, { mode: "vega-lite" })
+          .then(console.log)
+          .catch(console.warn);
+      </script>
     </div>
   </body>
 </html>

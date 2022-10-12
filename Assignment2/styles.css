@@ -102,3 +102,6 @@ body {
       -moz-column-gap: 20px;
            column-gap: 20px;
 }
+.rank {
+	height: 80%
+}
