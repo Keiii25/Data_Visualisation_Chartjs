@@ -65,9 +65,8 @@
           "params": [
             {
               "name": "loc_select",
-              "select": {"type": "point", "encodings": ["description"]}
+              "select": { "type": "point", "encodings": ["description"] }
             }
-            
           ],
           "transform": [
             {
@@ -89,14 +88,14 @@
           "mark": { "type": "geoshape", "stroke": "white" },
           "encoding": {
             "shape": { "field": "geo", "type": "geojson" },
-            "description": {"field": "Country"},
+            "description": { "field": "Country" },
             "color": {
               "field": "Value",
               "type": "quantitative",
               "scale": {
-                "type": "sequential",
-                "domain": [-2,-1, 0, 1, 2],
-                "range": ["#2c7bb6", "#abd9e9", "#ffffbf", "#fdae61", "#d7191c"]
+                "type": "threshold",
+                "domain": [-2, -1, 0, 1, 2],
+                "range": ["#5e3c99", "#b2abd2", "#f7f7f7", "#fdb863", "#e66101"]
               }
             },
             "tooltip": [
@@ -136,7 +135,7 @@
             "text": { "field": "properties.NAME", "type": "nominal" },
             "opacity": {
               "condition": {
-                "test": "datum['properties.NAME'] == 'China' || datum['properties.NAME'] == 'Australia' || datum['properties.NAME'] == 'Russia' || datum['properties.NAME'] == 'Malaysia' ||  datum['properties.NAME'] == 'United States of America'",
+                "test": "datum['properties.NAME'] == 'China' || datum['properties.NAME'] == 'Australia' || datum['properties.NAME'] == 'Russia' || datum['properties.NAME'] == 'Malaysia' ||  datum['properties.NAME'] == 'United States of America' || datum['properties.NAME'] == 'Iran' || datum['properties.NAME'] == 'Kazakhstan'",
                 "value": 1
               },
               "value": 0
@@ -154,24 +153,35 @@
             "url": "https://raw.githubusercontent.com/Keiii25/FIT3179_Assignment2/main/Assignment2/data/temperature_changes.csv"
           },
           "mark": "line",
-          "transform": [
-            {"filter": {"param": "loc_select"}}
-          ],
+          "transform": [{ "filter": { "param": "loc_select" } }],
           "encoding": {
-            "x": {"field": "Year", "type": "temporal", "axis": {"grid": false}, "title": "Year"},
-            "y": {"aggregate": "average","field": "Value", "type": "quantitative", "title": "Changes in Temperature", "axis": {"format": ".2s"}}
+            "x": {
+              "field": "Year",
+              "type": "ordinal",
+              "axis": { "grid": false },
+              "title": "Year"
+            },
+            "y": {
+              "aggregate": "average",
+              "field": "Value",
+              "type": "quantitative",
+              "title": "Changes in Temperature",
+              "axis": { "format": ".2s", "grid": false }
+            },
+            "color": { "value": "#5e3c99" }
+            
           }
         },
         {
-           "data": {
+          "data": {
             "url": "https://raw.githubusercontent.com/Keiii25/FIT3179_Assignment2/main/Assignment2/data/temperature_changes.csv"
           },
           "mark": {
-              "type": "text",
-              "align": "right",
-              "baseline": "bottom",
-              "x": "width",
-              "y": 0
+            "type": "text",
+            "align": "right",
+            "baseline": "bottom",
+            "x": "width",
+            "y": 0
           },
           "encoding": {
             "text": {
@@ -179,14 +189,35 @@
                 "test": "!isDefined(loc_select.Country)",
                 "value": "ALL COUNTRIES"
               },
-              "value": {"expr": "loc_select.Country"}
+              "value": { "expr": "loc_select.Country" }
             }
           }
+        },
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/Keiii25/FIT3179_Assignment2/main/Assignment2/data/temperature_changes.csv"
+          },
+          "layer": [
+            
+        {
+          "mark": {"type": "text", "fontSize" : 12, "dy": 120,"dx": 600,"fontStyle": "italic", "color": "black"},
+           "encoding": {
+             "text": {"value": "2016 was the year with the highest record of temperature due to the  El Niño. Event"},
+             "x" : {"datum": 2016}    
+           }
+        }
+          ]
         }
       ]
     }
   ],
   "config": {
-    "background": "#f3f3f3"
+    "background": "#e7e6e9",
+    "style": {
+      "cell": {
+        "stroke": "transparent"
+      }
+    },
+    "font": "Lexend Deca"
   }
 }

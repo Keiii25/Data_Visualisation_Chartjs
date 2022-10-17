@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 500,
-  "height": 500,
+  "width": 600,
+  "height": 400,
   "data": {
     "url": "https://raw.githubusercontent.com/Keiii25/FIT3179_Assignment2/main/Assignment2/data/temperature_deaths.csv"
   },
@@ -33,13 +33,13 @@
       "field": "Value",
       "type": "quantitative",
       "title": "Changes in Temperature",
-      "axis": { "tickCount": 4 }
+      "axis": { "tickCount": 4, "grid": false }
     },
     "y": {
       "field": "Deaths",
       "title": "Total death per 1000",
       "type": "quantitative",
-      "axis": { "tickCount": 6 }
+      "axis": { "tickCount": 6 , "grid": false}
     }
   },
 
@@ -108,7 +108,7 @@
      }
    },
    {
-     "mark": {"type": "text", "fontSize" : 12, "dy": 120,"dx": 95,"fontStyle": "italic", "color": "red"},
+     "mark": {"type": "text", "fontSize" : 12, "dy": 95,"dx": 95,"fontStyle": "italic", "color": "red"},
       "encoding": {
         "text": {"value": "Average Temperature Changes"},
         "x" : {"aggregate": "mean", "field": "Value"},
@@ -117,6 +117,13 @@
    }
   ],
   "config": {
-    "background": "#f3f3f3"
+    "axis": { "grid": true, "tickBand": "extent" },
+    "background": "#e7e6e9",
+    "style": {
+      "cell": {
+        "stroke": "transparent"
+      }
+    },
+    "font": "Lexend Deca"
   }
 }

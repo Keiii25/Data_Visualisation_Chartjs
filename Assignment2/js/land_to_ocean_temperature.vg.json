@@ -1,6 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 600,
+  "width": 800,
+  "height": 400,
   "data" : {
     "url" : "https://raw.githubusercontent.com/Keiii25/FIT3179_Assignment2/main/Assignment2/data/global_temperature_anomaly.csv"
   },
@@ -13,19 +14,23 @@
           "bin": {"binned": true, "step": 0.1},
           "field": "Year",
           "type": "ordinal",
-          "axis": null
+          "axis": { "tickCount": 3 , "labels": false}
         },
         "y" : {
           "field": "Value",
           "type": "quantitative",
-          "title": "Global Ocean to Land Temperature Index"
+          "title": "Global Ocean to Land Temperature Index",
+          "axis": {"grid": false, "tickCount": 3}
         },
         "color": {
           "field": "Value",
           "scale": {
             "domain": [0], 
-            "range": ["#2c7bb6", "#d7191c"],
+            "range": ["#5e3c99", "#e66101"],
             "type": "threshold"
+          },
+          "legend": {
+            "title": "Temperature Anomaly"
           }
         },
         "tooltip": [
@@ -36,6 +41,12 @@
     }
   ],
   "config": {
-    "background": "#f3f3f3"
+    "background": "#e7e6e9",
+    "style": {
+      "cell": {
+        "stroke": "transparent"
+      }
+    },
+    "font": "Lexend Deca"
   }
 }

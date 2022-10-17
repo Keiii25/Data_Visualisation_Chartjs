@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 300,
+    "height": 350,
+    "data": {"url": "https://raw.githubusercontent.com/Keiii25/FIT3179_Assignment2/main/Assignment2/data/fossils_fuel_usage.csv"},
+    "mark": "area",
+    "encoding": {
+      "x": {"timeUnit": "year", "field": "Year", "axis": {"format": "%Y"}, "title": "Year"},
+      "y": {"aggregate": "sum", "field": "Value", "title": "Value (TWh)"},
+      "color": {"field": "type", "scale": {
+        "domain": ["Coal (TWh)", "Gas (TWh)", "Oil (TWh)"],
+        "range": ["#edf8fb", "#9ebcda", "#8c96c6", "#8856a7", "810f7c"]
+      },  "legend": {"title": "Type of Fossil Fuel"}},
+      "tooltip" : [{"timeUnit": "year", "field": "Year","format": "%Y", "title": "Year"}, {"field": "type", "title": "Type of Fossil fuel"}]
+    },
+    "config": {
+      "background": "#e7e6e9",
+      "style": {
+        "cell": {
+          "stroke": "transparent"
+        }
+      },
+      "font": "Lexend Deca"
+    }
+  }

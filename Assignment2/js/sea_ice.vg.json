@@ -1,0 +1,38 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 350,
+  "height": 350,
+  "data": {
+    "url": "https://raw.githubusercontent.com/Keiii25/FIT3179_Assignment2/main/Assignment2/data/sea_ice_extent.csv"
+  },
+  "transform": [
+    { "filter": "datum.Year > 1995" },
+    { "filter": "datum.Year < 2019" }
+  ],
+  "mark": "rect",
+  "encoding": {
+    "y": { "timeUnit": "month", "field": "Month", "type": "ordinal" },
+    "x": { "field": "Year", "type": "ordinal" },
+    "color": { "field": "Extent", "type": "quantitative", 
+    "scale": {
+        "type": "sequential",
+        "domain": [2, 4, 8, 10, 12, 16],
+        "range": ["#edf8fb", "#bfd3e6", "#9ebcda", "#8c96c6", "#8856a7", "810f7c"]
+      },
+      "legend": {"title": "Sea Ice Extent"}
+    },
+    "tooltip": [
+        {"field": "Year"}, {"timeUnit": "month", "field": "Month", "type": "ordinal", "title": "Month"}, {"field": "Extent", "title": "Sea Ice Extent", "format": ".2f"} 
+    ]
+  },
+  "config": {
+    "axis": { "grid": true, "tickBand": "extent" },
+    "background": "#e7e6e9",
+    "style": {
+      "cell": {
+        "stroke": "transparent"
+      }
+    },
+    "font": "Lexend Deca"
+  }
+}

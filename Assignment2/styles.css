@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lexend+Deca:200,300,400,600,700,800,900');
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:200,300,400,600,700,800,900');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:200,300,400,600,700,800,900');
 
 body {
 	font-family: 'Lexend Deca', -apple-system, BlinkMacSystemFont,
@@ -7,7 +7,7 @@ body {
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 	padding-left: 10%;
 	padding-right: 10%;
-	background-color: #f3f3f3;
+	background-color: white;
 }
 #vis {
 	padding-top: 5%;
@@ -16,7 +16,9 @@ body {
 }
 .background {
 	margin-top: 2rem;
-	background-color: #f3f3f3;
+	background-color: #e7e6e9;
+
+	 /* background-color: #794752; */
 	border: 2px solid #f2f2f2;
 	padding-left: 2rem;
 	padding-right: 2rem;
@@ -46,7 +48,7 @@ body {
 	/* padding-bottom: 0.1rem; */
 	text-align: left;
 	text-transform: uppercase;
-	color: #012b4d
+	color: #8856a7
 }
 .row {
 	display: flex;
@@ -66,16 +68,16 @@ body {
 	font-weight: 600;
 }
 .grey {
-	color: gray
+	color: #545353
 }
 .title {
-	font-family: 'Josefin Sans', -apple-system, BlinkMacSystemFont,
+	font-family: 'Playfair Display', -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 	padding-left: 2px;
 	padding-top: 1%;
-	color: #012b4d;
-	font-size: 40px;
+	color: #8856a7;
+	font-size: 50px;
 	text-align: left;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -83,14 +85,14 @@ body {
 .subtitle {
 	padding-left: 2px;
 	padding-top: 8px;
-	color: #262E4A;
-	opacity: 0.7;
+	color: #262626;
+	/* opacity: 0.7; */
 	font-size: 18px;
 	text-align: left;
 	padding-bottom: 16px;
 }
 .divider {
-	border-bottom: 3px #012b4d solid;
+	border-bottom: 3px #aaaaaa solid;
 	/* width: 35% */
 }
 .multicolumn {
@@ -104,4 +106,17 @@ body {
 }
 .rank {
 	height: 80%
+}
+.center {
+	/* justify-content:center; */
+	align-self: center;
+}
+.column {
+	flex: 50%;
+  }
+.row {
+	display: flex;
+}
+.text-column {
+	padding-right: 40px;
 }
